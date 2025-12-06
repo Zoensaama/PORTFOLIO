@@ -1,0 +1,194 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/inter/Inter-Medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter';
+    background-color: white;
+    min-height: 100vh;
+    padding: 0px;
+}
+
+.portfolio-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;  /* ADD THIS LINE - centers the container */
+}
+
+.hero-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: row;  /* CHANGE FROM column TO row */
+    padding: 20px;
+    gap: 30px;  /* ADD THIS - space between image and text */
+}
+
+.hero-section {
+    width: 400px;
+    max-width: 1200px;  /* ADD THIS - controls the image width */
+    margin-bottom: 40px;
+    overflow: hidden;
+    animation: slideInFromLeft 1.5s ease-out;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hero-section.no-animation {  /* ADD THIS NEW RULE */
+    animation: none;
+}
+
+.hero-section img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;  /* ADD THIS LINE */
+}
+
+.hero-text {
+    margin-top: 0px;
+    text-align: left;
+    color: black;
+    max-width: 300px;  /* ADD THIS - controls when text wraps */
+    word-wrap: break-word;  /* ADD THIS - ensures long words wrap */
+}
+
+.hero-text p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.hero-text a {
+    color: #667eea;
+    text-decoration: none;
+    text-align: left;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.hero-text a:hover {
+    color: #764ba2;
+}
+
+.hero-text .highlight {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);  /* CHANGE FROM repeat(3, 1fr) */
+    grid-template-rows: repeat(2, 300px);  /* CHANGE FROM repeat(2, 1fr) */
+    row-gap: 80px;
+    column-gap: 20px;
+    padding: 80px;
+    margin-top: 40px;
+    justify-content: center;  /* ADD THIS LINE */
+    padding-bottom: 80px;  /* ADD THIS LINE */
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #2a2a2a;
+    max-width: 300px;  
+    margin: 0 auto;  
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
+.grid-item-text1 {
+    font-family: "Inter" ;
+    text-align: left;
+    font-size: 20px;
+    margin-top: 10px;
+    width: 100%;  /* ADD THIS */
+    /* height: 30px;   */
+}
+
+.grid-item-text2, .grid-item-text3, .grid-item-text4, .grid-item-text5, .grid-item-text6 {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;  
+    height: 40px; 
+}
+
+
+.grid-item-text1 img {  /* ADD THIS NEW RULE */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.grid-item-text2 img, .grid-item-text3 img, .grid-item-text4 img, .grid-item-text5 img, .grid-item-text6 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    }
+}
