@@ -1,0 +1,437 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/inter/Inter-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Epilogue-Black';
+    src: url('fonts/Epilogue_Complete/Epilogue_Complete/Fonts/OTF/Epilogue-Black.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Epilogue-Medium';
+    src: url('fonts/Epilogue_Complete/Epilogue_Complete/Fonts/OTF/Epilogue-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Epilogue-Medium';
+    background-color: white;
+    min-height: 100vh;
+    padding: 0px;
+}
+
+.portfolio-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;  /* ADD THIS LINE - centers the container */
+}
+
+.hero-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: row;  /* CHANGE FROM column TO row */
+    padding: 20px;
+    gap: 30px;  /* ADD THIS - space between image and text */
+}
+
+
+.hero-section {
+    width: 400px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    animation: slideInFromLeft 1.5s ease-out;
+}
+
+.hero-section img {
+    width: 400px;
+    height: 400px;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+
+/* .hero-section {
+    width: 400px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    animation: slideInFromLeft 1.5s ease-out;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hero-section.no-animation {  
+    animation: none;
+}
+
+.hero-section img {
+    width: 400px;
+    height: 400px;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px; 
+} */
+
+.hero-text {
+    margin-top: 0px;
+    text-align: left;
+    color: black;
+    max-width: 300px;  /* ADD THIS - controls when text wraps */
+    word-wrap: break-word;  /* ADD THIS - ensures long words wrap */
+}
+
+.hero-text p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+.hero-text a {
+    color: #757575;
+    text-decoration: none;
+    text-align: left;
+    font-size: 15px;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+
+.hero-text a:hover {
+    color: #161514;
+}
+
+.hero-text .highlight {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Individual word control */
+.word1 {
+    font-family: "Epilogue-Black", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    
+}
+
+.word1::before {
+    content: "Bonjour !";
+    transition: opacity 0.5s ease;
+
+}
+
+.word1::after {
+    content: "Merhaba!";
+    position: absolute;
+    color: rgb(96, 96, 96);
+    left: 0;
+    top: 0;
+    opacity: 0;
+    animation: none;}
+
+.word1:hover::before {
+    opacity: 0;
+}
+
+.word1:hover::after {
+    opacity: 1;
+    /* animation: wordSequence 2s ease forwards; */
+}
+
+/* @keyframes wordSequence {
+    0% {
+        content: "Merhaba!";
+        opacity: 1;
+        font-style: italic;
+    }
+    45% {
+        content: "Merhaba!";
+        opacity: 1;
+        font-style: italic;
+    
+    }
+    50% {
+        content: "Merhaba!";
+        opacity: 1;
+        font-style: italic;
+
+    }
+    55% {
+        content: "Hello!";
+        opacity: 1;
+        font-style: none;
+
+    }
+    60% {
+        content: "Hello!";
+        opacity: 1;
+    }
+    100% {
+        content: "Hello!";
+        opacity: 1;
+    }
+} */
+.word2 {
+    font-size: 20px;
+}
+
+.word3 {
+    font-size: 20px;
+}
+
+.word4 {
+    font-size: 20px;
+}
+
+.word5 {
+    font-size: 20px;
+}
+
+.word6 {
+    font-size: 20px;
+    font-family: "Epilogue-Black", sans-serif;
+
+
+}
+
+.word7 {
+    font-size: 20px;
+}
+
+.word8 {
+    font-size: 20px;
+    font-family: "Epilogue-Black", sans-serif;  
+    color: black
+}
+
+.word9 {
+    font-size: 20px;
+}
+
+.word10 {
+    font-size: 20px;
+    font-family: "Epilogue-Black", sans-serif;    
+
+
+}
+
+.word11 {
+    font-size: 20px;
+}
+
+/* Individual link control */
+/* .link1, .link2, .link3 {
+} */
+
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);  /* CHANGE FROM repeat(3, 1fr) */
+    grid-template-rows: repeat(2, 300px);  /* CHANGE FROM repeat(2, 1fr) */
+    row-gap: 80px;
+    column-gap: 20px;
+    padding: 80px;
+    margin-top: 40px;
+    justify-content: center;  /* ADD THIS LINE */
+    padding-bottom: 80px;  /* ADD THIS LINE */
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    /* border-radius: 8px; */
+    cursor: pointer;
+    background-color: #2a2a2a;
+    max-width: 300px;  
+    margin: 0 auto;  
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+    /* filter: grayscale(100%);  */
+    transition: transform 0.3s ease,
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.grid-item-text1 {
+    text-align: center;
+    font-family: "Inter" ;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;  /* ADD THIS */
+    /* height: 30px;   */
+}
+
+.grid-item-text2, .grid-item-text3, .grid-item-text4, .grid-item-text5, .grid-item-text6 {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;  
+    height: 40px; 
+}
+
+
+.grid-item-text1 img {  /* ADD THIS NEW RULE */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.grid-item-text2 img, .grid-item-text3 img, .grid-item-text4 img, .grid-item-text5 img, .grid-item-text6 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    }
+}
+
+
+.footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 15px 15px;
+    margin-top: 80px;
+}
+
+.footer p {
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.footer a {
+    font-size: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #dca027;
+}
+
+.footer-links {
+    margin-top: 0px;
+}
+
+.menu-button {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.menu-button img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+/* .menu-button:hover img {
+    opacity: 0.7;
+} */
+
+.dropdown-menu {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.5s ease;
+    min-width: 150px;
+    transform: translateY(-10px);  /* ADD THIS - starts above */
+    z-index: 1000;
+
+}
+
+.menu-button:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);  /* ADD THIS - drops down to normal position */
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+    
+}
